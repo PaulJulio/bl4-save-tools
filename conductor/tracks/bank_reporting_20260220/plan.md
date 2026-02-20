@@ -12,7 +12,7 @@
 
 ## Phase 3: Categorization & Firmware Logic
 - [x] Task: Implement item decoding to extract gear type and firmware/components (ea8735a)
-- [~] Task: Implement categorization and counting logic for firmware/gear combinations
+- [x] Task: Implement categorization and counting logic for firmware/gear combinations (4b6b1c7)
 - [ ] Task: Conductor - User Manual Verification 'Phase 3: Categorization & Firmware Logic' (Protocol in workflow.md)
 
 ## Phase 4: Reporting & Output
