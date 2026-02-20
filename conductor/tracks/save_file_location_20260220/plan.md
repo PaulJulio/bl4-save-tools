@@ -6,9 +6,9 @@
 - [x] Task: Conductor - User Manual Verification 'Phase 1: Research and Discovery' (Protocol in workflow.md)
 
 ## Phase 2: Implementation - Discovery and Decryption
-- [ ] Task: Create a Python module for automatically locating the save directory.
-    - [ ] Write Tests: Create unit tests for directory discovery across different platform IDs.
-    - [ ] Implement Feature: Implement the `find_save_directory` function.
+- [x] Task: Create a Python module for automatically locating the save directory. 55ab7d0
+    - [x] Write Tests: Create unit tests for directory discovery across different platform IDs. 55ab7d0
+    - [x] Implement Feature: Implement the `find_save_directory` function. 55ab7d0
 - [ ] Task: Integrate the decryption logic into the new Python script.
     - [ ] Write Tests: Create tests for decrypting sample save files with valid/invalid keys.
     - [ ] Implement Feature: Implement the `decrypt_save_file` function (TODO: Implement Epic support).
