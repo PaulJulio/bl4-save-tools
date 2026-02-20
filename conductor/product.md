@@ -15,8 +15,9 @@ The Borderlands 4 Save Editor & Automation Tools aim to simplify the management 
 
 ## Key Features (Current Phase)
 - **Local Automation Script:** A new Python-based script for automated information gathering and bank item reporting.
-- **Bank Item Summary:** Automated reporting of items stored in the shared `profile.sav` bank.
+- **Save File Reporting:** Automated reporting of character levels, classes, and shared bank items.
 - **Direct Local Access:** Reading save files directly from the game's local storage path.
+- **Multi-Path Discovery:** Support for standard and OneDrive-redirected save directories.
 - **Save Decryption/Encryption:** Core processing capabilities for `.sav` files using platform-specific keys.
 
 ## Future Roadmap
