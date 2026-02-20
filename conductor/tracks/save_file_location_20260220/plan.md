@@ -3,7 +3,7 @@
 ## Phase 1: Research and Discovery
 - [x] Task: Research standard Borderlands 4 save file paths for Steam and Epic on Windows. 62ae668
 - [x] Task: Verify the existing decryption logic in the codebase and identify any necessary updates. 62ae668
-- [~] Task: Conductor - User Manual Verification 'Phase 1: Research and Discovery' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 1: Research and Discovery' (Protocol in workflow.md)
 
 ## Phase 2: Implementation - Discovery and Decryption
 - [ ] Task: Create a Python module for automatically locating the save directory.
@@ -11,7 +11,7 @@
     - [ ] Implement Feature: Implement the `find_save_directory` function.
 - [ ] Task: Integrate the decryption logic into the new Python script.
     - [ ] Write Tests: Create tests for decrypting sample save files with valid/invalid keys.
-    - [ ] Implement Feature: Implement the `decrypt_save_file` function.
+    - [ ] Implement Feature: Implement the `decrypt_save_file` function (TODO: Implement Epic support).
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Implementation - Discovery and Decryption' (Protocol in workflow.md)
 
 ## Phase 3: Validation and Integration

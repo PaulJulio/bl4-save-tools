@@ -1,3 +1,19 @@
+## Save File Location
+The Borderlands 4 save files are typically located in the user's Documents folder. On Windows, if OneDrive is active, the path may be redirected.
+
+**Standard Windows Path:**
+`%USERPROFILE%\Documents\My Games\Borderlands 4\Saved\SaveGames\<STEAM_ID>\Profiles\client\`
+
+**OneDrive Redirected Path:**
+`%USERPROFILE%\OneDrive\Documents\My Games\Borderlands 4\Saved\SaveGames\<STEAM_ID>\Profiles\client\`
+
+**Example Path (Local Machine):**
+`C:\Users\paulh\OneDrive\Documents\My Games\Borderlands 4\Saved\SaveGames\76561197967455859\Profiles\client\`
+
+### Files:
+- `1.sav`, `2.sav`, etc.: Character specific save files.
+- `profile.sav`: Global profile data (bank, guardian rank, etc.).
+
 ## Encryption
 Save files are encrypted using AES-256 in ECB mode. The encryption key is derived from a static base key, XOR'd with the user's Steam/Epic (user) ID (in little-endian byte order).
 

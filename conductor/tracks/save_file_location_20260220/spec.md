@@ -14,5 +14,9 @@ This track focuses on implementing the core functionality for automatically loca
 - **Libraries:** `pycryptodome` for cryptographic operations.
 - **Target OS:** Windows
 - **Save Paths:**
-    - Steam: `%USERPROFILE%\Documents\My Games\Borderlands 4\Saved\SaveGames\<STEAM_ID>\Profiles\client`
-    - Epic: Similar path structure under `EpicGames` or platform-specific subfolders.
+    - Standard: `%USERPROFILE%\Documents\My Games\Borderlands 4\Saved\SaveGames\<ID>\Profiles\client`
+    - OneDrive: `%USERPROFILE%\OneDrive\Documents\My Games\Borderlands 4\Saved\SaveGames\<ID>\Profiles\client`
+    - Found (Steam): `C:\Users\paulh\OneDrive\Documents\My Games\Borderlands 4\Saved\SaveGames\76561197967455859\Profiles\client`
+- **Known IDs:**
+    - Steam (User): `76561197967455859`
+
