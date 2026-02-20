@@ -1,7 +1,7 @@
 # Implementation Plan - Bank Reporting
 
 ## Phase 1: Foundation & Discovery
-- [ ] Task: Create `tests/test_bank_report.py` and `scripts/bank_report.py` boilerplate
+- [x] Task: Create `tests/test_bank_report.py` and `scripts/bank_report.py` boilerplate (2e94f4f)
 - [ ] Task: Implement profile save discovery logic in `bank_report.py`
 - [ ] Task: Conductor - User Manual Verification 'Phase 1: Foundation & Discovery' (Protocol in workflow.md)
 
