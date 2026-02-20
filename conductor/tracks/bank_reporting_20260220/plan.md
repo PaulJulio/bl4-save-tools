@@ -1,9 +1,9 @@
 # Implementation Plan - Bank Reporting
 
-## Phase 1: Foundation & Discovery
+## Phase 1: Foundation & Discovery [checkpoint: 0a5679f]
 - [x] Task: Create `tests/test_bank_report.py` and `scripts/bank_report.py` boilerplate (2e94f4f)
 - [x] Task: Implement profile save discovery logic in `bank_report.py` (bbd3106)
-- [ ] Task: Conductor - User Manual Verification 'Phase 1: Foundation & Discovery' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 1: Foundation & Discovery' (Protocol in workflow.md) (0a5679f)
 
 ## Phase 2: Decryption & Parsing
 - [ ] Task: Implement decryption for `profile.sav` using existing `blcrypt` logic
