@@ -7,9 +7,34 @@ import os
 # Add scripts directory to path for imports
 sys.path.append(str(Path(__file__).parent.parent / "scripts"))
 
-from bank_report import find_profile_save, get_user_info_from_path, decrypt_profile
+from bank_report import find_profile_save, get_user_info_from_path, decrypt_profile, extract_bank_serials
 
 class TestBankReport(unittest.TestCase):
+    # ... existing tests ...
+
+    def test_extract_bank_serials(self):
+        decrypted_yaml = b"""
+domains:
+  local:
+    shared:
+      inventory:
+        items:
+          bank:
+            slot_0: { serial: "SERIAL1" }
+            slot_1: { serial: "SERIAL2" }
+"""
+        serials = extract_bank_serials(decrypted_yaml)
+        self.assertEqual(serials, ["SERIAL1", "SERIAL2"])
+
+    def test_extract_bank_serials_empty(self):
+        decrypted_yaml = b"domains: { local: { shared: { inventory: { items: { bank: {} } } } } }"
+        serials = extract_bank_serials(decrypted_yaml)
+        self.assertEqual(serials, [])
+
+    def test_extract_bank_serials_missing(self):
+        decrypted_yaml = b"other: data"
+        serials = extract_bank_serials(decrypted_yaml)
+        self.assertEqual(serials, [])
     # ... existing tests ...
 
     def test_get_user_info_from_path_steam(self):

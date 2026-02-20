@@ -1,4 +1,5 @@
 import os
+import yaml
 from pathlib import Path
 from discovery import find_save_directory
 from blcrypt import decrypt_sav_to_yaml
@@ -39,6 +40,27 @@ def decrypt_profile(sav_path: Path):
     """
     user_id, platform = get_user_info_from_path(sav_path)
     return decrypt_sav_to_yaml(sav_path, user_id, platform)
+
+def extract_bank_serials(yaml_bytes: bytes):
+    """
+    Extracts item serials from the bank.
+    """
+    # Note: blcrypt uses yaml.SafeLoader which handles custom tags (!)
+    # For now we'll use safe_load if we don't need those tags
+    data = yaml.safe_load(yaml_bytes)
+    if not data:
+        return []
+        
+    try:
+        # Based on verify_saves.py and serials.js
+        # Structure: domains -> local -> shared -> inventory -> items -> bank
+        bank = data['domains']['local']['shared']['inventory']['items']['bank']
+        if not bank:
+            return []
+        # The bank is a dict of slot_N: { serial: "..." }
+        return [item['serial'] for item in bank.values() if isinstance(item, dict) and 'serial' in item]
+    except (KeyError, TypeError):
+        return []
 
 def main():
     pass
