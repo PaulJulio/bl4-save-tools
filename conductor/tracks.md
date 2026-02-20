@@ -4,5 +4,5 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [~] **Track: Bank Reporting**
+- [x] **Track: Bank Reporting**
 *Link: [./tracks/bank_reporting_20260220/](./tracks/bank_reporting_20260220/)*
