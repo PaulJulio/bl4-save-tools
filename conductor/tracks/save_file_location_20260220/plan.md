@@ -12,7 +12,7 @@
 - [x] Task: Integrate the decryption logic into the new Python script. 43aeba1
     - [x] Write Tests: Create tests for decrypting sample save files with valid/invalid keys. 43aeba1
     - [x] Implement Feature: Implement the `decrypt_save_file` function (TODO: Implement Epic support). 43aeba1
-- [~] Task: Conductor - User Manual Verification 'Phase 2: Implementation - Discovery and Decryption' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 2: Implementation - Discovery and Decryption' (Protocol in workflow.md)
 
 ## Phase 3: Validation and Integration
 - [ ] Task: Implement basic validation for the decrypted data.

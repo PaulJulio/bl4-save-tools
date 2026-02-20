@@ -4,5 +4,5 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [ ] **Track: Implement save file location and decryption**
+- [~] **Track: Implement save file location and decryption**
   *Link: [./tracks/save_file_location_20260220/](./tracks/save_file_location_20260220/)*
