@@ -9,10 +9,10 @@
 - [x] Task: Create a Python module for automatically locating the save directory. 55ab7d0
     - [x] Write Tests: Create unit tests for directory discovery across different platform IDs. 55ab7d0
     - [x] Implement Feature: Implement the `find_save_directory` function. 55ab7d0
-- [ ] Task: Integrate the decryption logic into the new Python script.
-    - [ ] Write Tests: Create tests for decrypting sample save files with valid/invalid keys.
-    - [ ] Implement Feature: Implement the `decrypt_save_file` function (TODO: Implement Epic support).
-- [ ] Task: Conductor - User Manual Verification 'Phase 2: Implementation - Discovery and Decryption' (Protocol in workflow.md)
+- [x] Task: Integrate the decryption logic into the new Python script. 43aeba1
+    - [x] Write Tests: Create tests for decrypting sample save files with valid/invalid keys. 43aeba1
+    - [x] Implement Feature: Implement the `decrypt_save_file` function (TODO: Implement Epic support). 43aeba1
+- [~] Task: Conductor - User Manual Verification 'Phase 2: Implementation - Discovery and Decryption' (Protocol in workflow.md)
 
 ## Phase 3: Validation and Integration
 - [ ] Task: Implement basic validation for the decrypted data.
