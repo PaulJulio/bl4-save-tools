@@ -43,6 +43,17 @@ def derive_key(user_id: str, platform: str = "steam") -> bytes:
         raise ValueError(f"Unsupported platform: {platform}")
     return bytes(k)
 
+def validate_decrypted_data(data: dict):
+    """
+    Validates that the decrypted data structure matches expected BL4 formats.
+    """
+    if not isinstance(data, dict):
+        raise ValueError("Decrypted data must be a dictionary.")
+    
+    # Character saves have 'state', profiles have 'shared' or 'domains'
+    if 'state' not in data and 'shared' not in data and 'domains' not in data:
+        raise ValueError("Missing expected keys ('state' or 'shared') in decrypted data.")
+
 def decrypt_sav_to_yaml(sav_path: Path, user_id: str, platform: str = "steam") -> bytes:
     ciph = sav_path.read_bytes()
     if len(ciph) % 16 != 0:
@@ -55,6 +66,11 @@ def decrypt_sav_to_yaml(sav_path: Path, user_id: str, platform: str = "steam") -
         print("PKCS7 unpad failed, returning padded data")
         body = pt_padded
     yaml_data = zlib.decompress(body)
+    
+    # Validate the data before returning
+    data = yaml.load(yaml_data, Loader=yaml.SafeLoader)
+    validate_decrypted_data(data)
+    
     return yaml_data
 
 def encrypt_yaml_to_sav(yaml_path: Path, user_id: str, platform: str = "steam") -> bytes:
