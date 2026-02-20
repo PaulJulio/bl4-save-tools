@@ -14,7 +14,7 @@
     - [x] Implement Feature: Implement the `decrypt_save_file` function (TODO: Implement Epic support). 43aeba1
 - [x] Task: Conductor - User Manual Verification 'Phase 2: Implementation - Discovery and Decryption' (Protocol in workflow.md)
 
-## Phase 3: Validation and Integration
+## Phase 3: Validation and Integration [checkpoint: 785c504]
 - [x] Task: Implement basic validation for the decrypted data. c08b72f
     - [x] Write Tests: Verify that decrypted YAML contains expected keys (e.g., `state`, `experience`). c08b72f
     - [x] Implement Feature: Add validation checks to the decryption process. c08b72f
