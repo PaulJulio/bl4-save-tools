@@ -2,7 +2,7 @@
 
 ## Phase 1: Foundation & Discovery
 - [x] Task: Create `tests/test_bank_report.py` and `scripts/bank_report.py` boilerplate (2e94f4f)
-- [ ] Task: Implement profile save discovery logic in `bank_report.py`
+- [x] Task: Implement profile save discovery logic in `bank_report.py` (bbd3106)
 - [ ] Task: Conductor - User Manual Verification 'Phase 1: Foundation & Discovery' (Protocol in workflow.md)
 
 ## Phase 2: Decryption & Parsing
