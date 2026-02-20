@@ -11,8 +11,8 @@
 - [x] Task: Conductor - User Manual Verification 'Phase 2: Decryption & Parsing' (Protocol in workflow.md) (9ef6c22)
 
 ## Phase 3: Categorization & Firmware Logic
-- [ ] Task: Implement item decoding to extract gear type and firmware/components
-- [ ] Task: Implement categorization and counting logic for firmware/gear combinations
+- [x] Task: Implement item decoding to extract gear type and firmware/components (ea8735a)
+- [~] Task: Implement categorization and counting logic for firmware/gear combinations
 - [ ] Task: Conductor - User Manual Verification 'Phase 3: Categorization & Firmware Logic' (Protocol in workflow.md)
 
 ## Phase 4: Reporting & Output
