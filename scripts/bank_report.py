@@ -149,8 +149,8 @@ def decode_serial(serial: str):
     reader.read_bits(2)
     
     level = None
-    # Key-value pairs until double hard separator (00 00)
-    while True:
+    # Key-value pairs until double hard separator (00 00) or end of string
+    while reader.pos < len(reader.bits) - 2:
         if reader.peek_bits(2) == "00":
             reader.read_bits(2)
             if reader.peek_bits(2) == "00":
@@ -159,19 +159,21 @@ def decode_serial(serial: str):
             continue
             
         key = reader.read_varint()
+        if reader.pos >= len(reader.bits): break
         reader.read_bits(2) # soft separator
         value = reader.read_varint()
         
         if key == 1:
             level = value
             
-        if reader.peek_bits(2) == "01":
-            reader.read_bits(2)
-        elif reader.peek_bits(2) == "00":
-            reader.read_bits(2)
+        if reader.pos < len(reader.bits) - 2:
+            if reader.peek_bits(2) == "01":
+                reader.read_bits(2)
+            elif reader.peek_bits(2) == "00":
+                reader.read_bits(2)
 
     parts = []
-    while reader.pos < len(binary_str) - 5:
+    while reader.pos < len(reader.bits) - 5:
         part = reader.read_varint()
         if part == 0 and reader.pos >= len(binary_str) - 8:
             break
@@ -182,6 +184,15 @@ def decode_serial(serial: str):
         "level": level,
         "parts": parts
     }
+
+def get_item_info(serial: str):
+    """
+    Returns a human-readable gear type and firmware list.
+    """
+    decoded = decode_serial(serial)
+    gear_type = f"Type_{decoded['item_type_id']}"
+    firmware = [f"Part_{p}" for p in decoded['parts']]
+    return gear_type, firmware
 
 def generate_bank_report(serials: list):
     """
@@ -216,7 +227,51 @@ def generate_bank_report(serials: list):
     return report
 
 def main():
-    pass
+    """
+    Main entry point for the bank reporting tool.
+    """
+    print("--- Borderlands 4 Bank Reporter ---")
+    
+    path = find_profile_save()
+    if not path:
+        print("Error: Could not locate profile.sav.")
+        return
+        
+    print(f"Loading profile from: {path}\n")
+    
+    try:
+        yaml_bytes = decrypt_profile(path)
+        serials = extract_bank_serials(yaml_bytes)
+        
+        if not serials:
+            print("The shared bank is empty.")
+            return
+            
+        report = generate_bank_report(serials)
+        
+        print(f"{'Gear Type':<20} | {'Count':<6} | {'Unique Firmware':<15} | {'Notes'}")
+        print("-" * 65)
+        
+        # Sort by gear type for consistent output
+        for gear_type in sorted(report.keys()):
+            data = report[gear_type]
+            count = data["count"]
+            unique_firmware = len(data["firmware_counts"])
+            
+            notes = ""
+            # Check for excessive duplicates of specific firmware combinations
+            excessive = []
+            for firmware, f_count in data["firmware_counts"].items():
+                if f_count > 3:
+                    excessive.append(f"{f_count}x duplicates!")
+            
+            if excessive:
+                notes = ", ".join(excessive)
+                
+            print(f"{gear_type:<20} | {count:<6} | {unique_firmware:<15} | {notes}")
+            
+    except Exception as e:
+        print(f"Error generating report: {e}")
 
 if __name__ == "__main__":
     main()
