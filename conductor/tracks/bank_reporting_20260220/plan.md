@@ -10,12 +10,12 @@
 - [x] Task: Implement item serial extraction from decrypted profile data (57200b3)
 - [x] Task: Conductor - User Manual Verification 'Phase 2: Decryption & Parsing' (Protocol in workflow.md) (9ef6c22)
 
-## Phase 3: Categorization & Firmware Logic
+## Phase 3: Categorization & Firmware Logic [checkpoint: 4b6b1c7]
 - [x] Task: Implement item decoding to extract gear type and firmware/components (ea8735a)
 - [x] Task: Implement categorization and counting logic for firmware/gear combinations (4b6b1c7)
-- [ ] Task: Conductor - User Manual Verification 'Phase 3: Categorization & Firmware Logic' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 3: Categorization & Firmware Logic' (Protocol in workflow.md) (4b6b1c7)
 
-## Phase 4: Reporting & Output
+## Phase 4: Reporting & Output [checkpoint: 2b53265]
 - [x] Task: Implement formatted console output for bank inventory summary (4b6b1c7)
 - [x] Task: Implement highlighting/alerting for items exceeding the count threshold (>3) (157f756)
-- [ ] Task: Conductor - User Manual Verification 'Phase 4: Reporting & Output' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 4: Reporting & Output' (Protocol in workflow.md) (2b53265)
