@@ -5,7 +5,7 @@
 - [x] Task: Verify the existing decryption logic in the codebase and identify any necessary updates. 62ae668
 - [x] Task: Conductor - User Manual Verification 'Phase 1: Research and Discovery' (Protocol in workflow.md)
 
-## Phase 2: Implementation - Discovery and Decryption
+## Phase 2: Implementation - Discovery and Decryption [checkpoint: 64a6e68]
 - [x] Task: Create a Python module for automatically locating the save directory. 55ab7d0
     - [x] Write Tests: Create unit tests for directory discovery across different platform IDs. 55ab7d0
     - [x] Implement Feature: Implement the `find_save_directory` function. 55ab7d0
