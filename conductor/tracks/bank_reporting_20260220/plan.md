@@ -16,6 +16,6 @@
 - [ ] Task: Conductor - User Manual Verification 'Phase 3: Categorization & Firmware Logic' (Protocol in workflow.md)
 
 ## Phase 4: Reporting & Output
-- [ ] Task: Implement formatted console output for bank inventory summary
-- [ ] Task: Implement highlighting/alerting for items exceeding the count threshold (>3)
+- [x] Task: Implement formatted console output for bank inventory summary (4b6b1c7)
+- [x] Task: Implement highlighting/alerting for items exceeding the count threshold (>3) (157f756)
 - [ ] Task: Conductor - User Manual Verification 'Phase 4: Reporting & Output' (Protocol in workflow.md)
