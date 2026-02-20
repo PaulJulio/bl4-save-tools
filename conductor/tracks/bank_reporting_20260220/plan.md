@@ -6,7 +6,7 @@
 - [x] Task: Conductor - User Manual Verification 'Phase 1: Foundation & Discovery' (Protocol in workflow.md) (0a5679f)
 
 ## Phase 2: Decryption & Parsing
-- [ ] Task: Implement decryption for `profile.sav` using existing `blcrypt` logic
+- [x] Task: Implement decryption for `profile.sav` using existing `blcrypt` logic (ea8735a)
 - [ ] Task: Implement item serial extraction from decrypted profile data
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Decryption & Parsing' (Protocol in workflow.md)
 
