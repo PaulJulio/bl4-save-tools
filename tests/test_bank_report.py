@@ -7,9 +7,31 @@ import os
 # Add scripts directory to path for imports
 sys.path.append(str(Path(__file__).parent.parent / "scripts"))
 
-from bank_report import find_profile_save
+from bank_report import find_profile_save, get_user_info_from_path, decrypt_profile
 
 class TestBankReport(unittest.TestCase):
+    # ... existing tests ...
+
+    def test_get_user_info_from_path_steam(self):
+        path = Path("C:/SaveGames/76561197967455859/Profiles/client/profile.sav")
+        user_id, platform = get_user_info_from_path(path)
+        self.assertEqual(user_id, "76561197967455859")
+        self.assertEqual(platform, "steam")
+
+    def test_get_user_info_from_path_epic(self):
+        # Assuming Epic IDs are alphanumeric and not just digits
+        path = Path("C:/SaveGames/EpicUser123/Profiles/client/profile.sav")
+        user_id, platform = get_user_info_from_path(path)
+        self.assertEqual(user_id, "EpicUser123")
+        self.assertEqual(platform, "epic")
+
+    @patch('bank_report.decrypt_sav_to_yaml')
+    def test_decrypt_profile(self, mock_decrypt):
+        mock_decrypt.return_value = b"decrypted_data"
+        path = Path("C:/SaveGames/76561197967455859/Profiles/client/profile.sav")
+        result = decrypt_profile(path)
+        self.assertEqual(result, b"decrypted_data")
+        mock_decrypt.assert_called_once_with(path, "76561197967455859", "steam")
     @patch('bank_report.find_save_directory')
     @patch('pathlib.Path.exists')
     def test_find_profile_save_found(self, mock_exists, mock_find_save_dir):
