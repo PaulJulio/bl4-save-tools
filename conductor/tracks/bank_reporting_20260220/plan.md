@@ -7,7 +7,7 @@
 
 ## Phase 2: Decryption & Parsing
 - [x] Task: Implement decryption for `profile.sav` using existing `blcrypt` logic (ea8735a)
-- [ ] Task: Implement item serial extraction from decrypted profile data
+- [x] Task: Implement item serial extraction from decrypted profile data (57200b3)
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Decryption & Parsing' (Protocol in workflow.md)
 
 ## Phase 3: Categorization & Firmware Logic
