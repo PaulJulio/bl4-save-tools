@@ -1,0 +1,7 @@
+# Generated save data files
+test_*.yaml
+verify_*.yaml
+
+# Python coverage
+.coverage
+htmlcov/
