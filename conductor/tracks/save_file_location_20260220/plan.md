@@ -1,6 +1,6 @@
 # Implementation Plan - Save File Location and Decryption
 
-## Phase 1: Research and Discovery
+## Phase 1: Research and Discovery [checkpoint: 3fb907a]
 - [x] Task: Research standard Borderlands 4 save file paths for Steam and Epic on Windows. 62ae668
 - [x] Task: Verify the existing decryption logic in the codebase and identify any necessary updates. 62ae668
 - [x] Task: Conductor - User Manual Verification 'Phase 1: Research and Discovery' (Protocol in workflow.md)
