@@ -5,10 +5,10 @@
 - [x] Task: Implement profile save discovery logic in `bank_report.py` (bbd3106)
 - [x] Task: Conductor - User Manual Verification 'Phase 1: Foundation & Discovery' (Protocol in workflow.md) (0a5679f)
 
-## Phase 2: Decryption & Parsing
+## Phase 2: Decryption & Parsing [checkpoint: 9ef6c22]
 - [x] Task: Implement decryption for `profile.sav` using existing `blcrypt` logic (ea8735a)
 - [x] Task: Implement item serial extraction from decrypted profile data (57200b3)
-- [ ] Task: Conductor - User Manual Verification 'Phase 2: Decryption & Parsing' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 2: Decryption & Parsing' (Protocol in workflow.md) (9ef6c22)
 
 ## Phase 3: Categorization & Firmware Logic
 - [ ] Task: Implement item decoding to extract gear type and firmware/components
