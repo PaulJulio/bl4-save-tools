@@ -1,9 +1,9 @@
 # Implementation Plan - Save File Location and Decryption
 
 ## Phase 1: Research and Discovery
-- [ ] Task: Research standard Borderlands 4 save file paths for Steam and Epic on Windows.
-- [ ] Task: Verify the existing decryption logic in the codebase and identify any necessary updates.
-- [ ] Task: Conductor - User Manual Verification 'Phase 1: Research and Discovery' (Protocol in workflow.md)
+- [x] Task: Research standard Borderlands 4 save file paths for Steam and Epic on Windows.
+- [x] Task: Verify the existing decryption logic in the codebase and identify any necessary updates.
+- [~] Task: Conductor - User Manual Verification 'Phase 1: Research and Discovery' (Protocol in workflow.md)
 
 ## Phase 2: Implementation - Discovery and Decryption
 - [ ] Task: Create a Python module for automatically locating the save directory.
