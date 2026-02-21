@@ -7,9 +7,20 @@ import os
 # Add scripts directory to path for imports
 sys.path.append(str(Path(__file__).parent.parent / "scripts"))
 
-from bank_report import find_profile_save, get_user_info_from_path, decrypt_profile, extract_bank_serials
+from bank_report import find_profile_save, get_user_info_from_path, decrypt_profile, extract_bank_serials, decode_serial, get_item_info
 
 class TestBankReport(unittest.TestCase):
+    # ... existing tests ...
+
+    def test_decode_serial_real(self):
+        # A real serial from verify_profile.yaml
+        serial = '@Ugr$fEm/%P$!bk(PLUrm>VNhdGXHct9=^Fq'
+        decoded = decode_serial(serial)
+        self.assertIn('item_type_id', decoded)
+        self.assertIn('level', decoded)
+        self.assertIn('parts', decoded)
+        # Type 21 is very common for shields/gear in BL4
+        self.assertEqual(decoded['item_type_id'], 21)
     # ... existing tests ...
 
     def test_extract_bank_serials(self):
