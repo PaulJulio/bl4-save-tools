@@ -66,11 +66,29 @@ Analysis of "Locked" vs "Unlocked" variants indicated that lock status is typica
 ## 4. Unmapped / Missing Data
 - **Skillcraft**: No fingerprint established.
 - **Boxer**: No fingerprint established.
-- **Weapon Firmware**: Identification is unreliable and disabled in current tools.
+- **Weapon Firmware**: Weapons do not have firmware, only gear
 
 ---
 
-## 5. Tooling Reference
+## 5. Reference Data Snapshots (Gold Standard)
+
+To achieve 100% accuracy, we are capturing isolated snapshots where Vex's inventory contains only one specific gear type.
+
+| Snapshot File | Category | Total Items | With Firmware | Date | Significance |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `reference_vex_grenades.yaml` | Grenade Ordnance | 67 | 41 (User reported) | 2026-02-21 | Established definitive `r` vs `e` grenade signatures. |
+| `reference_vex_heavy.yaml` | Heavy Ordnance | 19 | 16 | 2026-02-21 | Captured signatures for all Heavy Weapons. |
+| `reference_vex_energy_shield.yaml` | Energy Shield | 47 | 38 | 2026-02-21 | Definitive signatures for Energy Shields. |
+| `reference_vex_armor_shield.yaml` | Armor Shield | 57 | 50 | 2026-02-21 | Definitive signatures for Armor Shields. |
+| `reference_vex_repkit.yaml` | Repkit | 70 | 62 | 2026-02-21 | Definitive signatures for Repkits. |
+| `reference_vex_enhancement_p1.yaml` | Enhancement (P1) | 48 | 35 | 2026-02-21 | Phase 1 of Enhancements (Legendary/Epic). |
+| `reference_vex_enhancement_p2.yaml` | Enhancement (P2) | 45 | 41 | 2026-02-21 | Phase 2 of Enhancements (Rare/Uncommon). |
+| `reference_vex_classmod_p1.yaml` | Class Mod (P1) | 47 | 33 | 2026-02-21 | Phase 1 of Class Mods (Legendary/Epic). |
+| `reference_vex_classmod_p2.yaml` | Class Mod (P2) | 43 | 43 | 2026-02-21 | Phase 2 of Class Mods (Rare/Uncommon/Common). |
+
+---
+
+## 6. Tooling Reference
 - `scripts/bank_report.py`: Definitive reporting tool using the verified mappings.
 - `scripts/detect_moves.py`: Research utility for tracking item movement between Bank and Inventory.
 - `scripts/analyze_firmware.py`: Low-level bitstream comparison utility.

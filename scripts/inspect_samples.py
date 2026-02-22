@@ -1,40 +1,26 @@
-import sys
 import yaml
-from pathlib import Path
-sys.path.append(str(Path.cwd() / 'scripts'))
+import sys
+from collections import Counter
 
-from bank_report import find_profile_save, decrypt_profile, extract_bank_serials, decode_item_serial
-
-def inspect_samples():
-    path = find_profile_save()
-    if not path:
-        print("Profile not found.")
-        return
-
-    yaml_bytes = decrypt_profile(path)
-    serials = extract_bank_serials(yaml_bytes)
+def main():
+    with open('reference_bank.yaml', 'r') as f:
+        bank_data = yaml.safe_load(f)
+    bank_items = bank_data.get('items', [])
     
-    samples = {} # category -> list of items
+    with open('reference_vex_grenades.yaml', 'r') as f:
+        vex_data = yaml.safe_load(f)
+    vex_items = vex_data.get('items', [])
     
-    for serial in serials:
-        decoded = decode_item_serial(serial)
-        cat = decoded.item_category
-        if cat not in samples:
-            samples[cat] = []
-        if len(samples[cat]) < 2: # Get 2 samples per category
-            samples[cat].append(decoded)
-
-    for cat, items in samples.items():
-        print(f"\n=== Category: {cat} ===")
-        for i, item in enumerate(items):
-            print(f"\nSample {i+1}:")
-            print(f"  Serial: {item.serial}")
-            print(f"  Item Type Char: {item.item_type}")
-            print(f"  Confidence: {item.confidence}")
-            print(f"  Stats: {item.stats}")
-            print(f"  Raw Fields (first 10):")
-            for k, v in list(item.raw_fields.items())[:10]:
-                print(f"    {k}: {v}")
+    bank_flags = Counter([i['flags'] for i in bank_items])
+    vex_flags = Counter([i['flags'] for i in vex_items])
+    
+    print("Vex Flags (Known Grenades):")
+    for f, count in vex_flags.items():
+        print(f"  Flag {f}: {count} items")
+        
+    print("\nBank Flags (Should be 0 grenades):")
+    for f, count in bank_flags.items():
+        print(f"  Flag {f}: {count} items")
 
 if __name__ == "__main__":
-    inspect_samples()
+    main()
